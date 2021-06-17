@@ -1,2 +1,2 @@
 # Todo-lists
-Realize todo lists on js, jquery, Knouckout, ReactJS
+Realize todo lists on js, jquery, KnouckoutJS, ReactJS
