@@ -1,0 +1,137 @@
+body{
+    margin-top:20px;
+    background: #f8f8f8;
+}
+
+.todo-form{
+    display: flex;
+}
+
+#todo-add-btn{
+    width: 80px;
+    margin-left: 30px;
+}
+
+li.nav-item.active {
+    background: #007bff;
+    border-radius: 15px;
+}
+
+li.nav-item.active a{
+    color: #ffffff;
+}
+
+.todo-nav {
+    margin-top: 10px
+}
+
+.todo-list {
+    margin: 10px 0
+}
+
+.todo-list .todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin: 5px 0;
+    border-radius: 0;
+    background: #f7f7f7;
+}
+.todo-item .left{
+    display: flex;
+    width: 90%;
+}
+.todo-item .left .todo-text{
+    display: block;
+    padding-left: 15px;
+}
+
+.todo-list.only-active .todo-item.complete {
+    display: none
+}
+
+.todo-list.only-active .todo-item:not(.complete) {
+    display: flex;
+}
+
+.todo-list.only-complete .todo-item:not(.complete) {
+    display: none
+}
+
+.todo-list.only-complete .todo-item.complete {
+    display: flex;
+}
+
+.todo-list .todo-item.complete .todo-text {
+    text-decoration: line-through
+}
+
+.btn-outline-danger{
+    padding: 2px 7px;
+    font-size: 14px;
+}
+
+div.checker {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+div.checker input,
+div.checker span {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+div.checker span {
+    display: -moz-inline-box;
+    display: inline-block;
+    zoom: 1;
+    text-align: center;
+    background-position: 0 -260px;
+}
+
+div.checker, div.checker input, div.checker span {
+    width: 19px;
+    height: 19px;
+}
+
+div.checker, div.radio, div.uploader {
+    position: relative;
+}
+
+div.button, div.button *, div.checker, div.checker *, div.radio, div.radio *, div.selector, div.selector *, div.uploader, div.uploader * {
+    margin: 0;
+    padding: 0;
+}
+
+div.button, div.checker, div.radio, div.selector, div.uploader {
+    display: -moz-inline-box;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+}
+
+.card {
+    padding: 25px;
+    margin-bottom: 20px;
+    border: initial;
+    background: #fff;
+    border-radius: calc(.15rem - 1px);
+    box-shadow: 0 1px 15px rgba(0,0,0,0.04), 0 1px 6px rgba(0,0,0,0.04);
+}
+@media (max-width: 630px) {
+    .todo-item .left .todo-text{
+        font-size: 12px;
+    }
+    .todo-item .left .todo-text {
+        padding-left: 5px;
+    }
+    .todo-item .left {
+        width: 75%;
+    }
+    .card {
+        padding: 0;
+    }
+}
