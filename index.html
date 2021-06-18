@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo jQuery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-white">
+          <div class="card-body">
+            <form action="javascript:void(0);" class="todo-form">
+              <input type="text" id="todo-text" class="form-control add-task" placeholder="New Task...">
+              <button id="todo-add-btn" onclick="addTask()" class="btn btn-info">add</button>
+            </form>
+            <ul class="nav nav-pills todo-nav">
+              <li role="presentation" class="nav-item all-task active" onclick="filterAll(this)"><a href="#" class="nav-link">All</a></li>
+              <li role="presentation" class="nav-item active-task" onclick="filterActiveTasks(this)"><a href="#" class="nav-link">Active</a></li>
+              <li role="presentation" class="nav-item completed-task" onclick="filterCompleted(this)"><a href="#" class="nav-link">Completed</a></li>
+            </ul>
+            <div class="todo-list">
+<!--              <div class="todo-item">-->
+<!--                <div class="checker"><span class=""><input type="checkbox"></span></div>-->
+<!--                <span>Create theme</span>-->
+<!--                <a href="javascript:void(0);" class="float-right remove-todo-item"><button type="button" class="btn btn-outline-danger">Remove</button></a>-->
+<!--              </div>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="application/javascript" src="scripts/script.js"></script>
+</html>
