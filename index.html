@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo jQuery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-white">
+          <div class="card-body">
+            <form action="javascript:void(0);" class="todo-form">
+                <input class="todoField form-control add-task" id="new-todo" data-bind="value: current, valueUpdate: 'afterkeydown', enterKey: add" placeholder="New Task..." autofocus>
+                <button id="todo-add-btn" class="btn btn-info" data-bind="value: current, click: add">add</button>
+            </form>
+            <ul class="nav nav-pills todo-nav" >
+              <li role="presentation" data-bind="css: { active: isActive('all') }" class="nav-item all-task active" >
+                <a data-bind="css: { selected: showMode() == 'all' }" href="#/all" class="nav-link">All</a>
+              </li>
+              <li  role="presentation" data-bind="css: { active: isActive('active') }"  class="nav-item active-task" >
+                <a data-bind="css: { selected: showMode() == 'active' }" href="#/active" class="nav-link">Active</a>
+              </li>
+              <li role="presentation" data-bind="css: { active: isActive('completed') }" class="nav-item completed-task" >
+                <a data-bind="css: { selected: showMode() == 'completed' }" href="#/completed" class="nav-link">Completed</a>
+              </li>
+            </ul>
+            <div class="todo-list" data-bind="foreach: todos">
+              <div class="todo-item" data-bind="css: { completed: completed },visible: $root.filteredTodos($data)">
+                <div class="left"><div class="checker"><span class=""><input type="checkbox" data-bind="checked: completed"></span></div>
+                  <div class="todo-text" data-bind="text: title, event: { dblclick: $root.editItem }, css: {textDecoration:completed()==true}"></div>
+                </div>
+                <a class="float-right remove-todo-item">
+                  <button type="button" class="btn btn-outline-danger" data-bind="click: $root.remove">Remove</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+<script type="text/javascript" src="scripts/libs/knockout-3.5.1.js"></script>
+<script type="text/javascript" src="scripts/libs/director.js"></script>
+<script type="application/javascript" src="scripts/script.js"></script>
+</html>
